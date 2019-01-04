@@ -11,5 +11,7 @@ export interface User {
 }
 
 image?:string,
-isActive?:boolean
+isActive?:boolean,
+balance?:number,
+registered?:any
 }
