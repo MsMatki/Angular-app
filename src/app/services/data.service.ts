@@ -41,4 +41,9 @@ export class DataService {
      console.log('fetching users from service')
      return this.users;
    }
+
+
+   addUser(user: User){
+    this.users.unshift(user);
+   }
 }
