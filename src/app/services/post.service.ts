@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PostService {
-postsUrl: string = 'https://jsonplaceholder.typicode.com/posts';
+postsUrl: string = 'https://jsonplaceholder.typicode.com/PoSts';
 
   constructor(private http: HttpClient) { 
 
@@ -24,6 +24,11 @@ postsUrl: string = 'https://jsonplaceholder.typicode.com/posts';
 
   savePost(post: Post): Observable<Post>{
     return this.http.post<Post>(this.postsUrl, post, httpOptions)
+  }
+
+  updatePost(post: Post): Observable<Post>{
+    const url = `${this.postsUrl}/${post.id}`;
+    return this.http.post<Post>(url, post, httpOptions)
   }
   
 }
